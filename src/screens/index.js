@@ -1,3 +1,4 @@
 import Welcome from './Welcome';
+import Signup from './Signup';
 
-export {Welcome};
+export {Welcome, Signup};
