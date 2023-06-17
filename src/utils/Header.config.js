@@ -1,4 +1,5 @@
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
+import {BackSvg} from '../assets/icons';
 
 // No back button no header title
 export const emptyBarHeaderOptions = {
@@ -11,6 +12,11 @@ export const emptyBarHeaderOptions = {
 export const withBackBarHeaderOptions = {
   headerShown: true,
   title: '',
+  headerLeft: props => (
+    <TouchableOpacity {...props} className={'px-4'}>
+      <BackSvg />
+    </TouchableOpacity>
+  ),
   headerShadowVisible: false,
 };
 // shows back button and title

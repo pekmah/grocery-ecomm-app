@@ -1,7 +1,11 @@
 import React from 'react';
-import {Signup, Welcome} from '../screens';
+import {Signup, SignupPhone, Welcome} from '../screens';
 import {createStackNavigator} from '@react-navigation/stack';
-import {noHeaderOptions} from '../utils/Header.config';
+import {
+  noHeaderOptions,
+  withBackBarHeaderOptions,
+} from '../utils/Header.config';
+import SignupOtp from '../screens/SignupOtp';
 
 const MainNav = () => {
   const Stack = createStackNavigator();
@@ -18,6 +22,18 @@ const MainNav = () => {
         name={'Signup'}
         component={Signup}
         options={noHeaderOptions}
+      />
+
+      <Stack.Screen
+        name={'Signup_phone'}
+        component={SignupPhone}
+        options={withBackBarHeaderOptions}
+      />
+
+      <Stack.Screen
+        name={'Signup_otp'}
+        component={SignupOtp}
+        options={withBackBarHeaderOptions}
       />
     </Stack.Navigator>
   );
